@@ -12,4 +12,7 @@ public interface BoardMapper {
 
     List<Board> getList();
 
+    //게시글 상세 보기
+    Board getBoard(Long boardId);
+
 }

@@ -34,4 +34,11 @@ public class BoardController {
         return "/board/main";
     }
 
+    //게시글 상세보기
+    @GetMapping("/view")
+    public String viewBoard(Model model, Long boardId){
+        model.addAttribute("view", boardService.getBoard(boardId));
+        return "/board/view";
+    }
+
 }
