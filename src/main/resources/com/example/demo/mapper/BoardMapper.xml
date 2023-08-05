@@ -17,4 +17,22 @@
         from tbl_board
         where boardId=#{boardId};
     </select>
+
+    <insert id="uploadBoard" parameterType="com.example.demo.domain.Board">
+        insert into tbl_board(title, content, name)
+        values (#{title}, #{content}, #{name});
+    </insert>
+
+    <update id="updateBoard" parameterType="com.example.demo.domain.Board">
+        update tbl_board
+        set title=#{title}, content=#{content}
+        where boardId=#{boardId};
+    </update>
+
+    <delete id="deleteBoard" parameterType="Long">
+        delete
+        from tbl_board
+        where boardId=#{boardId};
+    </delete>
+
 </mapper>
